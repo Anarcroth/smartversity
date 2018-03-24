@@ -1,42 +1,10 @@
-const urlParams = new URLSearchParams(window.location.search);
-
 let selectionProps = { x: 0, y: 0, scrollY: 0, width: 0, selectedText: '' };
 
-// Initializes the article page.
-// Gets called at the very end of the file.
-const init = function() {
-    const urlParamsLength = urlParams.toString().length;
-    let id=urlParams.toString().substring(3)
-    if(id.charAt(urlParamsLength-4)=='='){
-        id=id.substring(0,urlParamsLength-4);
-    }
-    getArticle(id).then(article => processArticle(article));
-};
-
-// Fills in the lists with key phrases and entities.
-const fillInList = function(listArray, divId, message, itemContainer, endpoint) {
-    const containerDiv = document.getElementById(divId);
-    containerDiv.innerHTML = message;
-    listArray.forEach(phrase => {
-        const listElement = document.createElement(itemContainer);
-        const link = document.createElement('a');
-
-        link.href = `./index.html?${endpoint}=${phrase}`;
-        link.innerHTML = phrase;
-
-        listElement.classList.add(`${divId}-item`);
-        listElement.appendChild(link);
-        listElement.innerHTML = `${listElement.innerHTML},&nbsp;`;
-        containerDiv.appendChild(listElement);
-    });
-    containerDiv.innerHTML = containerDiv.innerHTML.substring(0, containerDiv.innerHTML.lastIndexOf(',')) +
-        containerDiv.innerHTML.substring(containerDiv.innerHTML.lastIndexOf(',') + 7, containerDiv.innerHTML.length);
-};
-
+let secondpop = $('#secondpop');
+secondpop.hide();
 // Responses on any mouse up event.
 // Controls solely the behaviour of the popover div.
 const selectText = function() {
-
     selectionProps = getSelectionProps();
     const popover = document.getElementById('popover');
 
@@ -57,15 +25,45 @@ const selectText = function() {
 
 // Responses on clicking the like popover.
 // Sends request to the server with the liked excerpt.
-const likeParagraph = function() {
+const sendEmail = function() {
     const popover = document.getElementById('popover');
     popover.style.visibility = 'hidden';
 
+    // send some email through the back end
     console.log('Selected text:\n' + selectionProps.selectedText);
     xhrRequest('GET',
-            `/artcl/save_liked_paragraph?likedParagraph=${selectionProps.selectedText}&articleTitle=${urlParams.get('id')}`)
+               `/artcl/save_liked_paragraph?likedParagraph=${selectionProps.selectedText}&articleTitle=${urlParams.get('id')}`)
         .then(resp => console.log(resp),
-            err => console.trace(err.message));
+              err => console.trace(err.message));
+};
+
+const notaBene = function() {
+    const popover = document.getElementById('popover');
+    popover.style.visibility = 'hidden';
+
+    secondpopup.show();
+    var popper = new Popper(popover, secondpop, {
+        placement: 'top',
+        onCreate: function(data){
+            console.log(data);
+        },
+        modifiers: {
+            flip: {
+                behavior: ['left', 'right', 'top','bottom']
+            },
+            offset: {
+                enabled: true,
+                offset: '0,10'
+            }
+        }
+    });
+};
+
+const hasQuestion = function() {
+    const popover = document.getElementById('popover');
+    popover.style.visibility = 'hidden';
+
+
 };
 
 // Responses on clicking the like button for the whole article.
@@ -96,7 +94,8 @@ const getSelectionProps = function() {
         if (selection.rangeCount) {
             range = selection.getRangeAt(0).cloneRange();
 
-            if (range.getClientRects && range.commonAncestorContainer.parentElement == document.getElementById('article-text')) {
+            if (range.getClientRects && range.commonAncestorContainer.parentElement.id == 'textbook-text') {
+
                 rects = range.getClientRects();
                 if (rects.length > 0) {
                     rect = rects[0];
@@ -108,11 +107,12 @@ const getSelectionProps = function() {
                     scrollY = window.scrollY;
                     width = rect.width;
                     selectedText = range.toString();
+                    console.log(x,y,scrollY);
                 }
 
-            } else if (range.commonAncestorContainer.parentElement == document.getElementById('article-text')) {
+            } else if (range.commonAncestorContainer.parentElement.id == 'textbook-text') {
                 const span = document.createElement('span');
-
+                console.log("else if span create element");
                 if (span.getClientRects) {
 
                     // Ensure span has dimensions and position by
@@ -140,5 +140,3 @@ const getSelectionProps = function() {
     }
     return { x: x, y: y, scrollY: scrollY, width: width, selectedText: selectedText };
 };
-
-init();
