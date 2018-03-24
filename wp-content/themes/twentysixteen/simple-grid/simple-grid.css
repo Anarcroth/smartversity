@@ -1,0 +1,114 @@
+
+/* Filters */
+
+#filters {
+    align-items: center;
+    text-align: center;
+    color: #ccc;
+    font-size: 20px;
+    padding: 1em 1em 1.5em 0em;
+}
+#filters a {
+    color: #444545;
+    display: block;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 0 10px 1;
+    text-decoration: none;
+}
+#filters a:first-child {} #filters a:hover,
+                          #filters a.active {
+                              background: #48a24b;
+                              color: #fff;
+                          }
+/* Sortlist */
+#sortlist {
+    min-height:100px;
+    position: relative;
+    display: block;
+    padding: 0;
+    transition: all .4s ease-out;
+    display: none;
+    margin: 5px 0 0 5px;
+    padding-left: 1em;
+    /*margin:0px auto;*/
+}
+#sortlist li {
+    background-color: #ffff;
+    position: absolute;
+    width: 14.5em;
+    height: 25em;
+    display: block;
+    overflow: hidden;
+    color: #868686;
+    transition: all 0.4s ease-out;
+    margin-top: 20px;
+    margin-left: 0px;
+    cursor: pointer;
+}
+#sortlist > li:hover {
+    /*color: #d37070;*/
+
+    color: #D17E7E;
+}
+
+#book-title{
+    padding: 1.5em 0 0 1em;
+}
+
+#book-container{
+    padding: 0 0 6em 0;
+    height: relative;
+}
+
+#book-name {
+    font-family: Arial;
+    font-weight: bold;
+    color: #5E5E5E;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+#nav-book{
+    padding-left: 1em;
+}
+#book-name-filter{
+    float: left;
+    font-size: 17px;
+    list-style: none outside none;
+    margin-right: 3px;
+    position: relative;
+}
+
+#filters ul{float: left;
+    margin: 0;
+    position: relative;
+    z-index: 1;}
+#filters > ul li:first-child:after {
+    display: none;
+}
+#filters > ul li:after {
+    content: "|";
+    left: 0;
+    position: absolute;
+    top: 1px;
+    color:#444545;
+}
+#filters > ul li:first-child {
+    padding-left: 0;
+}
+#filters ul li{
+    float: left;
+    font-size: 17px;
+    list-style: none outside none;
+    padding: 0 0px 0 0px;
+    position: relative;
+}
+#filters ul li a{ display: block;
+    font-weight: bold;
+    line-height: 30px;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #444545;
+}
