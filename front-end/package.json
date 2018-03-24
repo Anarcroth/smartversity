@@ -4,6 +4,7 @@
   "description": "Smartversity System",
   "main": "index.js",
   "dependencies": {
+    "d3": "^5.0.0",
     "vue": "^2.5.16"
   },
   "devDependencies": {},
