@@ -9,7 +9,7 @@ import Upgrade from 'views/Upgrade/Upgrade';
 import LandingPage from 'views/LandingPage/LandingPage';
 
 const appRoutes = [
-    { path: "/", name: "LandingPage", icon: "pe-7s-graph", component: LandingPage },    
+    { path: "/landing", name: "LandingPage", icon: "pe-7s-graph", component: LandingPage },    
     { path: "/dashboard", name: "Dashboard", icon: "pe-7s-graph", component: Dashboard },
     { path: "/user", name: "User Profile", icon: "pe-7s-user", component: UserProfile },
     { path: "/table", name: "Table List", icon: "pe-7s-note2", component: TableList },
