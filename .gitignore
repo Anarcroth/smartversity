@@ -109,3 +109,6 @@ buildNumber.properties
 
 ./owl.sql
 owl.sql
+
+# Node
+**/node_modules
