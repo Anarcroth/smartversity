@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StudifyHeader from 'components/StudifyHeader/StudifyHeader'
 import StudifyAboutUs from 'components/StudifyAboutUs/StudifyAboutUs'
+import StudifyGradesAndProgress from 'components/StudifyGradesAndProgress/StudifyGradesAndProgress'
 import { Grid, Row, Col } from 'react-bootstrap';
 
 class LandingPage extends Component {
@@ -26,6 +27,12 @@ class LandingPage extends Component {
                         <Col lg={12} sm={12}>
                             <StudifyAboutUs>
                             </StudifyAboutUs>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={12} sm={12}>
+                            <StudifyGradesAndProgress>
+                            </StudifyGradesAndProgress>
                         </Col>
                     </Row>
                 </Grid>

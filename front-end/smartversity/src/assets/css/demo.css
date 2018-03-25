@@ -503,7 +503,7 @@
     text-align: center;
 }
 
-#header-image {
+#header-image, .fit-image {
     max-width: 100%;
     max-height: 100%;
 }
