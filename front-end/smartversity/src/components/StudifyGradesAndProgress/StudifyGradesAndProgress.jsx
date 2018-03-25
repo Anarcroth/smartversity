@@ -6,14 +6,20 @@ import yourProgressImage from 'assets/img/progress.png';
 
 class StudifyGradesAndProgress extends Component {
     render() {
+        var style = {
+            background: 'lightblue'
+        };
+        var image = {
+            width: '120px',
+            height: '120px',
+        }
         return (
-            <div id="about-us-container">
+            <div id="about-us-container" style={style}>
                 <Grid>
-                    <Row>
+                    <Row className="display-inline-block align-middle">
                         <Col md={4}>
-                            <img className="fit-image" src={yourGradesImage} />
+                            <img style={image} src={yourGradesImage} />
                         </Col>
-
                         <Col md={8}>
                             <p>YOUR GRADES</p>
                             <p>Lorem Ipsum</p>
@@ -25,7 +31,7 @@ class StudifyGradesAndProgress extends Component {
                             <p>Lorem Ipsum</p>
                         </Col>
                         <Col md={4}>
-                            <img className="fit-image" src={yourProgressImage} />
+                            <img style={image} src={yourProgressImage} />
                         </Col>
                     </Row> {/*YOUR PROGRESS*/}
                 </Grid>

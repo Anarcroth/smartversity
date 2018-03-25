@@ -16,10 +16,10 @@ get_header();
         }
     </style>
     <script>
-        $(window).on('load', function() {
-            $("#nav-book ul li:nth-child(2)").trigger("click");
-            $("#nav-book ul li:nth-child(1)").trigger("click");
-            $("#sortlist").css('display', 'block');
+        jQuery(window).on('load', function() {
+            jQuery("#nav-book ul li:nth-child(2)").trigger("click");
+            jQuery("#nav-book ul li:nth-child(1)").trigger("click");
+            jQuery("#sortlist").css('display', 'block');
         })
     </script>
 
@@ -101,4 +101,3 @@ get_header();
     </div>
 </main><!-- #main-content -->
 <?php
-get_footer();

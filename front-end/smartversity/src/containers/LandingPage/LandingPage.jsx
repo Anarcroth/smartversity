@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import StudifyHeader from 'components/StudifyHeader/StudifyHeader'
 import StudifyAboutUs from 'components/StudifyAboutUs/StudifyAboutUs'
 import StudifyGradesAndProgress from 'components/StudifyGradesAndProgress/StudifyGradesAndProgress'
+import StudifyScheduleAndCalendar from 'components/StudifyScheduleAndCalendar/StudifyScheduleAndCalendar.jsx'
+import LandingFooter from 'components/Footer/LandingFooter.jsx'
 import { Grid, Row, Col } from 'react-bootstrap';
 
 class LandingPage extends Component {
@@ -33,6 +35,13 @@ class LandingPage extends Component {
                         <Col lg={12} sm={12}>
                             <StudifyGradesAndProgress>
                             </StudifyGradesAndProgress>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col lg={12} sm={12}>
+                            <StudifyScheduleAndCalendar>
+                            </StudifyScheduleAndCalendar>
+                            <LandingFooter></LandingFooter>
                         </Col>
                     </Row>
                 </Grid>

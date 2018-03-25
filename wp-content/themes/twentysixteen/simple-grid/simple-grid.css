@@ -23,26 +23,26 @@
                           }
 /* Sortlist */
 #sortlist {
-    min-height:100px;
+    min-height:80px;
     position: relative;
     display: block;
     padding: 0;
     transition: all .4s ease-out;
     display: none;
-    margin: 5px 0 0 5px;
+    margin: 0px 0 0 0px;
     padding-left: 1em;
     /*margin:0px auto;*/
 }
 #sortlist li {
     background-color: #ffff;
     position: absolute;
-    width: 14.5em;
-    height: 25em;
+    width: 14em;
+    height: 35em;
     display: block;
     overflow: hidden;
     color: #868686;
     transition: all 0.4s ease-out;
-    margin-top: 20px;
+    margin-top: 0px;
     margin-left: 0px;
     cursor: pointer;
 }
