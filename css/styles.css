@@ -1,0 +1,60 @@
+/* General */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.arrow-clip {
+    background-color: transparent;
+    opacity: 1;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    clip: rect(10px 20px 20px 0);
+    margin-left: -10px;
+}
+
+.arrow {
+    display: block;
+    background-color: black;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg) scale(.5);
+}
+
+#popover {
+    position: absolute;
+    z-index: 3;
+    left: 0px;
+    top: 0px;
+    border-radius: 5px;
+    background-color: black;
+    opacity: 0.8;
+    visibility: hidden;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    animation: pop-upwards 180ms forwards linear;
+    transition: top 75ms ease-out, left 75ms ease-out;
+}
+
+#popover {
+    width: 100px;
+    height: 2.2rem;
+}
+
+.pop-span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.pop-span>a {
+    color: white;
+}
