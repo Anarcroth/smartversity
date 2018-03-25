@@ -1,6 +1,14 @@
 # Created by https://www.gitignore.io/api/emacs,phpstorm,sublimetext
 
-### Emacs ###
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+### emacs ###
 # -*- mode: gitignore; -*-
 *~
 \#*\#
